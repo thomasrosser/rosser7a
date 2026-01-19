@@ -2,19 +2,200 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Teachers of St Chris</title>
+    <title>Wales and Its History</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #b30000;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcccc;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #b30000;
+        }
+
+        /* IMAGE GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* TIMELINE */
+        .timeline button {
+            background-color: #b30000;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .timeline button:hover {
+            background-color: #800000;
+        }
+
+        .timeline p {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #b30000;
+        }
+
+        /* QUIZ */
+        .quiz button {
+            background-color: #333;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .quiz button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        function toggleTimeline(id) {
+            var text = document.getElementById(id);
+            text.style.display = (text.style.display === "block") ? "none" : "block";
+        }
+
+        function checkAnswer() {
+            var answer = document.getElementById("answer").value;
+            var result = document.getElementById("result");
+
+            if (answer.toLowerCase() === "cymraeg") {
+                result.innerHTML = "Correct! 🎉";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "Try again!";
+                result.style.color = "red";
+            }
+        }
+    </script>
 </head>
 
-  
 <body>
-    <h1> Best teachers of St Chris</h1>
-<img src="stchris.jpg" alt="new campus">
-  <h3> Mr Rosser</h3>
-  <p> Mr Rosser is a really cool person, who has just moved to Bahrain! He is amazing! </p>
-    
+
+<header>
+    <h1>Wales and Its History</h1>
+    <p>Explore Wales through time</p>
+</header>
+
+<nav>
+    <a href="#overview">Overview</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<section id="overview">
+    <h2>Overview of Wales</h2>
+    <p>
+        Wales is part of the United Kingdom and has a rich history, unique language, and strong traditions.
+        It is famous for its castles, mountains, and Celtic heritage.
+    </p>
+</section>
+
+<section id="gallery">
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Caernarfon_Castle.jpg" alt="Caernarfon Castle">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Snowdon_mountain.jpg" alt="Mount Snowdon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Welsh_flag.jpg" alt="Welsh Flag">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Cardiff_Castle.jpg" alt="Cardiff Castle">
+    </div>
+</section>
+
+<section id="timeline">
+    <h2>Interactive Timeline</h2>
+    <div class="timeline">
+        <button onclick="toggleTimeline('t1')">Roman Invasion (AD 48)</button>
+        <p id="t1">The Romans built forts and roads across Wales.</p>
+
+        <button onclick="toggleTimeline('t2')">Medieval Wales (1200s)</button>
+        <p id="t2">Welsh princes ruled small kingdoms before English conquest.</p>
+
+        <button onclick="toggleTimeline('t3')">Industrial Revolution (1800s)</button>
+        <p id="t3">Coal mining made Wales an industrial centre.</p>
+
+        <button onclick="toggleTimeline('t4')">Modern Wales (1999)</button>
+        <p id="t4">The Senedd (Welsh Parliament) was established.</p>
+    </div>
+</section>
+
+<section id="quiz">
+    <h2>Quick Quiz</h2>
+    <div class="quiz">
+        <p><strong>What is the Welsh language called?</strong></p>
+        <input type="text" id="answer" placeholder="Type your answer">
+        <br>
+        <button onclick="checkAnswer()">Check Answer</button>
+        <p id="result"></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Wales History Project</p>
+</footer>
+
 </body>
-
-  
 </html>
-
